@@ -47,8 +47,12 @@ const Header = () => {
 
         {/* Right */}
         <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className="h-10 w-10" />
+          <HomeIcon className="h-10 w-10 cursor-pointer" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
+          <img
+            src="https://img.icons8.com/ios/50/000000/facebook-messenger--v1.png"
+            className="h-10 w-10 cursor-pointer"
+          />
         </div>
       </div>
     </div>
