@@ -56,6 +56,10 @@ const Header = () => {
             src="https://img.icons8.com/material-outlined/96/000000/compass.png"
             className="navBtn "
           />
+          <img
+            src="https://img.icons8.com/ios/50/000000/heart-with-arrow--v2.png"
+            className="navBtn"
+          />
         </div>
       </div>
     </div>
