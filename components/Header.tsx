@@ -47,16 +47,31 @@ const Header = () => {
         <div className="flex items-center justify-end space-x-4">
           <HomeIcon className="navBtn" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
-          <img
-            src="https://img.icons8.com/fluency-systems-regular/96/000000/facebook-messenger.png"
-            className="navBtn"
-          />
+          <div className="relative navBtn">
+            <img
+              src="https://img.icons8.com/fluency-systems-regular/96/000000/facebook-messenger.png"
+              className="navBtn"
+            />
+            <div className="absolute -top-1 -right-3 flex items-center justify-center animate-pulse text-white text-xs w-5 h-5 bg-red-500 rounded-full">
+              3
+            </div>
+          </div>
+
           <PlusIcon className="navBtn border-[2.5px] h-7 border-black rounded-lg" />
           <img
             src="https://img.icons8.com/material-outlined/96/000000/compass.png"
             className="navBtn "
           />
-          <img src="https://img.icons8.com/ios-glyphs/30/000000/like--v2.png" />
+          <img
+            src="https://img.icons8.com/ios-glyphs/48/000000/like--v2.png"
+            className="navBtn"
+          />
+
+          <img
+            src="https://avatars.githubusercontent.com/u/66319691?v=4"
+            alt="Profile Pic"
+            className="h-10 cursor-pointer rounded-full "
+          />
         </div>
       </div>
     </div>
