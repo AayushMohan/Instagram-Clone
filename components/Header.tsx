@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import {
   SearchIcon,
-  PlusCircleIcon,
+  PlusIcon,
   HeartIcon,
   MenuIcon,
 } from "@heroicons/react/outline";
@@ -51,6 +51,7 @@ const Header = () => {
             src="https://img.icons8.com/fluency-systems-regular/96/000000/facebook-messenger.png"
             className="navBtn"
           />
+          <PlusIcon className="navBtn border-[2.5px] h-7 border-black rounded-lg" />
           <img
             src="https://img.icons8.com/material-outlined/96/000000/compass.png"
             className="navBtn "
