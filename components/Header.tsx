@@ -21,7 +21,10 @@ const Header = () => {
           />
         </div>
 
-        {/* Middle */}
+        {/* Middle - Search input field*/}
+        <div>
+          <input type="text" placeholder="Search" />
+        </div>
 
         {/* Right */}
       </div>
