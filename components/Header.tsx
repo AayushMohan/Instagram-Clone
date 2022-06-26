@@ -3,9 +3,7 @@ import React from "react";
 import {
   SearchIcon,
   PlusCircleIcon,
-  UserGroupIcon,
   HeartIcon,
-  PaperAirplaneIcon,
   MenuIcon,
 } from "@heroicons/react/outline";
 
@@ -47,11 +45,15 @@ const Header = () => {
 
         {/* Right */}
         <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className="h-10 w-10 cursor-pointer" />
+          <HomeIcon className="navBtn" />
           <MenuIcon className="h-6 md:hidden cursor-pointer" />
           <img
-            src="https://img.icons8.com/ios/50/000000/facebook-messenger--v1.png"
-            className="h-10 w-10 cursor-pointer"
+            src="https://img.icons8.com/fluency-systems-regular/96/000000/facebook-messenger.png"
+            className="navBtn"
+          />
+          <img
+            src="https://img.icons8.com/material-outlined/96/000000/compass.png"
+            className="navBtn "
           />
         </div>
       </div>
