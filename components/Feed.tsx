@@ -1,15 +1,15 @@
 import React from "react";
+import Stories from "./Stories";
 
 const Feed = () => {
   return (
     <main>
-      {/* Section */}
       <section>
         {/* Stories */}
+        <Stories />
         {/* Posts */}
       </section>
 
-      {/* Section */}
       <section>
         {/* Mini Profile */}
         {/* Suggestions */}
