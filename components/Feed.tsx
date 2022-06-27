@@ -1,7 +1,17 @@
 import React from "react";
 
 const Feed = () => {
-  return <div>Feed</div>;
+  return (
+    <main>
+      {/* Section */}
+      {/* Stories */}
+      {/* Posts */}
+
+      {/* Section */}
+      {/* Mini Profile */}
+      {/* Suggestions */}
+    </main>
+  );
 };
 
 export default Feed;
