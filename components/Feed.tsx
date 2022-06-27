@@ -3,7 +3,7 @@ import Stories from "./Stories";
 
 const Feed = () => {
   return (
-    <main>
+    <main className="grid grid-cols-1 md:grid-cols-2">
       <section>
         {/* Stories */}
         <Stories />
