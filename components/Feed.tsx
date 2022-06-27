@@ -4,12 +4,16 @@ const Feed = () => {
   return (
     <main>
       {/* Section */}
-      {/* Stories */}
-      {/* Posts */}
+      <section>
+        {/* Stories */}
+        {/* Posts */}
+      </section>
 
       {/* Section */}
-      {/* Mini Profile */}
-      {/* Suggestions */}
+      <section>
+        {/* Mini Profile */}
+        {/* Suggestions */}
+      </section>
     </main>
   );
 };
