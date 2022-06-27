@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import faker from "faker";
 
 const Stories = () => {
+  useEffect(() => {}, []);
+
   return (
     <div>
       {/* Story */}
