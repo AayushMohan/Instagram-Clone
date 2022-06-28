@@ -1,7 +1,21 @@
 import React from "react";
 
 const Post = ({ id, username, userImg, img, caption }: any) => {
-  return <div>I'm a post</div>;
+  return (
+    <div>
+      {/* Header */}
+
+      {/* Image */}
+
+      {/* Buttons */}
+
+      {/* Caption */}
+
+      {/* Comments */}
+
+      {/* Input Box*/}
+    </div>
+  );
 };
 
 export default Post;
