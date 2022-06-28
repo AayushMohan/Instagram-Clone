@@ -1,14 +1,16 @@
 import React from "react";
 import {
   BookmarkIcon,
-  ChatIcon,
   DotsHorizontalIcon,
   EmojiHappyIcon,
   HeartIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/outline";
 
+import Comments from "../Assets/comment.svg";
+
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
+import Image from "next/image";
 
 const Post = ({ id, username, userImg, img, caption }: any) => {
   return (
@@ -28,6 +30,14 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
       <img src={img} className="object-cover w-full" alt="" />
 
       {/* Buttons */}
+      <div className="flex justify-between px-4 pt-4">
+        <div className="flex space-x-4">
+          <HeartIcon className="btn" />
+          <Image src={Comments} alt="" className="btn" />
+          <PaperAirplaneIcon className="btn rotate-45" />
+        </div>
+        <BookmarkIcon className="btn" />
+      </div>
 
       {/* Caption */}
 
