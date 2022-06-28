@@ -48,6 +48,9 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
       {/* Comments */}
 
       {/* Input Box*/}
+      <form action="">
+        <EmojiHappyIcon />
+      </form>
     </div>
   );
 };
