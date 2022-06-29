@@ -34,7 +34,7 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
         <div className="flex space-x-4">
           <HeartIcon className="btn" />
           <Image src={Comments} alt="" className="btn" />
-          <PaperAirplaneIcon className="btn rotate-45" />
+          <PaperAirplaneIcon className="btn h-6 rotate-45" />
         </div>
         <BookmarkIcon className="btn" />
       </div>
