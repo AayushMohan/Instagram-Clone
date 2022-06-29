@@ -37,6 +37,10 @@ const Suggestions = () => {
               Works at {faker.company.companyName()}
             </h3>
           </div>
+
+          <button className="text-blue-500 text-xs font-semibold">
+            Follow
+          </button>
         </div>
       ))}
     </div>
