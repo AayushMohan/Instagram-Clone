@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Stories.tsx",
-    "firebase.js"
+    "firebase.js",
+    "pages/auth/signin.js"
   ],
   "exclude": ["node_modules"]
 }
