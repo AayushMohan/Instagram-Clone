@@ -4,15 +4,20 @@ import { SearchIcon, PlusIcon, HeartIcon } from "@heroicons/react/outline";
 
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50 ">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto m-2">
         {/* Left */}
-        <div className="relative w-24 lg:inline-grid cursor-pointer">
+        <div
+          onClick={() => router.push("/")}
+          className="relative w-24 lg:inline-grid cursor-pointer"
+        >
           <Image
             src="https://links.papareact.com/ocw"
             layout="fill"
@@ -20,7 +25,10 @@ const Header = () => {
           />
         </div>
         {/* Mobile Setup */}
-        <div className="flex items-start order-first w-1/4 md:hidden">
+        <div
+          onClick={() => router.push("/")}
+          className="flex items-start order-first w-1/4 md:hidden"
+        >
           <img
             src="https://img.icons8.com/fluency-systems-regular/48/000000/camera.png"
             className="navBtn h-7 mt-.5 block"
@@ -42,7 +50,7 @@ const Header = () => {
         </div>
         {/* Right */}
         <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className="navBtn" />
+          <HomeIcon onClick={() => router.push("/")} className="navBtn" />
 
           {session ? (
             <>
