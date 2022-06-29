@@ -1,4 +1,5 @@
 import React from "react";
+import MiniProfile from "./MIniProfile";
 import Posts from "./Posts";
 import Stories from "./Stories";
 
@@ -14,6 +15,7 @@ const Feed = () => {
 
       <section>
         {/* Mini Profile */}
+        <MiniProfile />
         {/* Suggestions */}
       </section>
     </main>
