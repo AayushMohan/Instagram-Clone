@@ -5,9 +5,12 @@ import { SearchIcon, PlusIcon, HeartIcon } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtoms";
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const [open, setOpen] = useRecoilState(modalState);
   const router = useRouter();
 
   return (
@@ -64,7 +67,10 @@ const Header = () => {
                 </div>
               </div>
 
-              <PlusIcon className="navBtn border-[2.5px] h-7 border-black rounded-lg" />
+              <PlusIcon
+                onClick={() => setOpen(true)}
+                className="navBtn border-[2.5px] h-7 border-black rounded-lg"
+              />
               <img
                 src="https://img.icons8.com/material-outlined/96/000000/compass.png"
                 className="navBtn "
