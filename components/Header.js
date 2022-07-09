@@ -3,7 +3,13 @@ import React from "react";
 import { SearchIcon, PlusIcon, HeartIcon } from "@heroicons/react/outline";
 
 import { HomeIcon } from "@heroicons/react/solid";
-import { signIn, signOut, useSession } from "next-auth/react";
+import {
+  signIn,
+  signOut,
+  SignOutParams,
+  SignOutResponse,
+  useSession,
+} from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
