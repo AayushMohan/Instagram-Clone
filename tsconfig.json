@@ -21,7 +21,8 @@
     "**/*.tsx",
     "components/Stories.tsx",
     "firebase.js",
-    "pages/auth/signin.js"
+    "pages/auth/signin.js",
+    "components/Footer.js"
   ],
   "exclude": ["node_modules"]
 }
