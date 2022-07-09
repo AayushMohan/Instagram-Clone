@@ -21,7 +21,10 @@
     "**/*.tsx",
     "components/Stories.js",
     "firebase.js",
-    "pages/auth/signin.js"
+    "pages/auth/signin.js",
+    "pages/_app.js",
+    "pages/index.js",
+    "atoms/modalAtoms.js"
   ],
   "exclude": ["node_modules"]
 }
