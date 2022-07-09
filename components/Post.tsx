@@ -87,7 +87,7 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
   };
 
   return (
-    <div className="bg-white my-7 border rounded-md">
+    <div className="bg-white md:my-7 border rounded-md">
       {/* Header */}
       <div className="flex items-center p-5">
         <img
