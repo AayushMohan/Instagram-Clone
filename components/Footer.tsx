@@ -36,7 +36,6 @@ const Footer = () => {
             />
 
             <img
-              onClick={signOut}
               src={session?.user?.image}
               alt="Profile Pic"
               className="h-10 w-10 cursor-pointer rounded-full md:block"
