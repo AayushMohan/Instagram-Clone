@@ -19,10 +19,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/Stories.tsx",
+    "components/Stories.js",
     "firebase.js",
-    "pages/auth/signin.js",
-    "components/Footer.js"
+    "pages/auth/signin.js"
   ],
   "exclude": ["node_modules"]
 }

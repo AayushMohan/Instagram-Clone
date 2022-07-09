@@ -58,7 +58,7 @@ const Modal = () => {
     setSelectedFile(null);
   };
 
-  const addImageToPost = (e: any) => {
+  const addImageToPost = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
       reader.readAsDataURL(e.target.files[0]);

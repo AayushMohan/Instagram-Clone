@@ -27,7 +27,7 @@ import {
 import { db } from "../firebase";
 import toast, { Toaster } from "react-hot-toast";
 
-const Post = ({ id, username, userImg, img, caption }: any) => {
+const Post = ({ id, username, userImg, img, caption }) => {
   const { data: session } = useSession();
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
@@ -72,7 +72,7 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
     }
   };
 
-  const sendComment = async (e: React.FormEvent<HTMLFormElement>) => {
+  const sendComment = async (e) => {
     e.preventDefault();
 
     const commentToSend = comment;
@@ -135,7 +135,7 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
       {/* Comments */}
       {comments.length > 0 && (
         <div className="ml-10 h-20 overflow-y-scroll scrollbar-thumb-black scrollbar-thin">
-          {comments.map((comment: any) => (
+          {comments.map((comment) => (
             <div key={comment.id} className="flex items-center space-x-2 mb-3">
               <img
                 className="h-7 rounded-full"
