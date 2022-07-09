@@ -16,19 +16,23 @@ import { useSession } from "next-auth/react";
 import {
   addDoc,
   collection,
+  deleteDoc,
+  doc,
   onSnapshot,
   orderBy,
   query,
   serverTimestamp,
+  setDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { timeStamp } from "console";
+import toast, { Toaster } from "react-hot-toast";
 
 const Post = ({ id, username, userImg, img, caption }: any) => {
   const { data: session } = useSession();
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
+  const [hasLiked, setHasLiked] = useState(false);
 
   useEffect(
     () =>
@@ -39,10 +43,36 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
         ),
         (snapshot) => setComments(snapshot.docs)
       ),
-    [db]
+    [db, id]
   );
 
-  const sendComment = async (e) => {
+  useEffect(
+    () =>
+      onSnapshot(collection(db, "posts", id, "likes"), (snapshot) =>
+        setLikes(snapshot.docs)
+      ),
+    [db, id]
+  );
+
+  useEffect(
+    () =>
+      setHasLiked(
+        likes.findIndex((like) => like.id === session?.user?.uid) !== -1
+      ),
+    [likes]
+  );
+
+  const likePost = async () => {
+    if (hasLiked) {
+      await deleteDoc(doc(db, "posts", id, "likes", session?.user?.uid));
+    } else {
+      await setDoc(doc(db, "posts", id, "likes", session?.user?.uid), {
+        username: session?.user?.username,
+      });
+    }
+  };
+
+  const sendComment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const commentToSend = comment;
@@ -52,7 +82,7 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
       comment: commentToSend,
       username: session?.user?.username,
       userImage: session?.user?.image,
-      timeStamp: serverTimestamp(),
+      timestamp: serverTimestamp(),
     });
   };
 
@@ -76,7 +106,15 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
       {session && (
         <div className="flex justify-between px-4 pt-4">
           <div className="flex space-x-4">
-            <HeartIcon className="btn" />
+            {hasLiked ? (
+              <HeartIconFilled
+                onClick={likePost}
+                className="btn text-red-500"
+              />
+            ) : (
+              <HeartIcon onClick={likePost} className="btn" />
+            )}
+
             <Image src={Comments} alt="" className="btn" />
             <PaperAirplaneIcon className="btn h-6 rotate-45" />
           </div>
@@ -86,6 +124,10 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
 
       {/* Caption */}
       <p className="p-5 truncate">
+        {likes.length > 0 && (
+          <p className="font-bold mb-1">{likes.length} likes</p>
+        )}
+
         <span>{username} </span>
         {caption}
       </p>
@@ -96,9 +138,9 @@ const Post = ({ id, username, userImg, img, caption }: any) => {
           {comments.map((comment: any) => (
             <div key={comment.id} className="flex items-center space-x-2 mb-3">
               <img
+                className="h-7 rounded-full"
                 src={comment.data().userImage}
                 alt=""
-                className="h-7 rounded-full"
               />
               <p className="text-sm flex-1">
                 <span className="font-bold">{comment.data().username}</span>{" "}
